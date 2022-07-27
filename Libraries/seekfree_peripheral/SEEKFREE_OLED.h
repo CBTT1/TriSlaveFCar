@@ -46,15 +46,15 @@
 	#define OLED_SDA_PIN  P23
 	#define OLED_REST_PIN P32		//液晶复位引脚定义
 	#define OLED_DC_PIN   P33   	//液晶命令位引脚定义
-	#define OLED_CS_PIN   P35   	//定义SPI_CS引脚
+	#define OLED_CS_PIN   P23   	//定义SPI_CS引脚
 
 #elif (PERIPHERAL_PIN_SWITCH == 1)
 
 	#define OLED_SCL_PIN  P25		
 	#define OLED_SDA_PIN  P23
-	#define OLED_REST_PIN P20		//液晶复位引脚定义
-	#define OLED_DC_PIN   P21   	//液晶命令位引脚定义
-	#define OLED_CS_PIN  P22   	//定义SPI_CS引脚
+	#define OLED_REST_PIN P32		//液晶复位引脚定义
+	#define OLED_DC_PIN   P33   	//液晶命令位引脚定义
+	#define OLED_CS_PIN  P23   	//定义SPI_CS引脚
 
 #endif
 
@@ -71,22 +71,22 @@
 //PERIPHERAL_PIN_SWITCH的值可以在board.h文件中修改
 #if (PERIPHERAL_PIN_SWITCH == 0)
 
-	#define OLED_SPI_N 			SPI_2
-	#define OLED_SPI_SCLK_PIN   SPI2_SCLK_P25
-	#define OLED_SPI_MOSI_PIN   SPI2_MOSI_P23
-	#define OLED_SPI_MISO_PIN   SPI2_MISO_P24	//定义SPI_MISO引脚  OLED屏幕没有MISO引脚，但是这里任然需要定义，在spi的初始化时需要使用
-	#define OLED_SPI_REST_PIN 	P32				//液晶复位引脚定义
-	#define OLED_SPI_DC_PIN   	P33   			//液晶命令位引脚定义
-	#define OLED_SPI_CS_PIN  	P35   			//定义SPI_CS引脚
+	#define OLED_SPI_N 			SPI_3
+	#define OLED_SPI_SCLK_PIN   SPI3_SCLK_P43
+	#define OLED_SPI_MOSI_PIN   SPI3_MOSI_P40
+	#define OLED_SPI_MISO_PIN   SPI3_MISO_P41	//定义SPI_MISO引脚  OLED屏幕没有MISO引脚，但是这里任然需要定义，在spi的初始化时需要使用
+	#define OLED_SPI_REST_PIN 	P56				//液晶复位引脚定义
+	#define OLED_SPI_DC_PIN   	P54   			//液晶命令位引脚定义
+	#define OLED_SPI_CS_PIN  	P22   			//定义SPI_CS引脚
 
 #elif (PERIPHERAL_PIN_SWITCH == 1)
 
-	#define OLED_SPI_N 			SPI_2
-	#define OLED_SPI_SCLK_PIN   SPI2_SCLK_P25
-	#define OLED_SPI_MOSI_PIN   SPI2_MOSI_P23
-	#define OLED_SPI_MISO_PIN   SPI2_MISO_P24	//定义SPI_MISO引脚  OLED屏幕没有MISO引脚，但是这里任然需要定义，在spi的初始化时需要使用
-	#define OLED_SPI_REST_PIN 	P20				//液晶复位引脚定义
-	#define OLED_SPI_DC_PIN   	P21   			//液晶命令位引脚定义
+	#define OLED_SPI_N 			SPI_3
+	#define OLED_SPI_SCLK_PIN   SPI3_SCLK_P43
+	#define OLED_SPI_MOSI_PIN   SPI3_MOSI_P40
+	#define OLED_SPI_MISO_PIN   SPI3_MISO_P41	//定义SPI_MISO引脚  OLED屏幕没有MISO引脚，但是这里任然需要定义，在spi的初始化时需要使用
+	#define OLED_SPI_REST_PIN 	P56				//液晶复位引脚定义
+	#define OLED_SPI_DC_PIN   	P54   			//液晶命令位引脚定义
 	#define OLED_SPI_CS_PIN     P22				//定义硬件SPI_CS引脚
 
 #endif
@@ -130,6 +130,7 @@ void oled_putpixel(uint8 x,uint8 y,uint8 data1);
 void oled_clrpixel(uint8 x,uint8 y);
 void oled_p6x8str(uint8 x,uint8 y,const int8 ch[]);
 void oled_p8x16str(uint8 x,uint8 y,const int8 ch[]);
+void oled_p6x8char(uint8 x,uint8 y,const int8 ch);
 void oled_uint16(uint8 x, uint8 y, uint16 num);
 void oled_int16(uint8 x, uint8 y, int16 num);
 void oled_printf_int32(uint16 x,uint16 y,int32 dat,uint8 num);

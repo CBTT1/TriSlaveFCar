@@ -24,14 +24,14 @@
 #include "common.h"
 
 
-//#define FOSC          		24000000	//FOSC的值设置为24Mhz
-#define FOSC           			0			//FOSC的值设置为0，则自动读取系统频率
+#define FOSC          		24000000	//FOSC的值设置为24Mhz
+//#define FOSC           			0			//FOSC的值设置为0，则自动读取系统频率
 											//FOSC的值设置不为0，则系统频率为FOSC的值
 											
-#define EXTERNAL_CRYSTA_ENABLE 	0			//使用外部晶振，0为不使用，1为使用（建议使用内部晶振）
+#define EXTERNAL_CRYSTA_ENABLE 	1			//使用外部晶振，0为不使用，1为使用（建议使用内部晶振）
 #define PRINTF_ENABLE			1			//printf使能，0为失能，1为使能
 #define ENABLE_IAP 				1			//使能软件一键下载功能，0为失能，1为使能
-#define	PERIPHERAL_PIN_SWITCH	1			//0为48脚核心板，1为64脚核心板
+#define	PERIPHERAL_PIN_SWITCH	0			//0为48脚核心板，1为64脚核心板
 
 #define DEBUG_UART 			  	UART_1
 #define DEBUG_UART_BAUD 	  	115200

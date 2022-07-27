@@ -18,8 +18,9 @@
  ********************************************************************************************************************/
 
 #include "headfile.h"
-
-
+#include "menu.h"
+#include "my_menu.h"
+#include "device.h"
 //board.h文件中FOSC的值设置为0,则程序自动识别系统频率
 
 /*board.h文件中FOSC的值设置不为0，则系统频率为FOSC的值，
@@ -28,20 +29,28 @@
 /*在board_init中,已经将P54引脚设置为复位，
 如果需要使用P54引脚,可以在board.c文件中的board_init()函数中删除SET_P54_RESRT即可*/
 
+
 void main()
 {
 
 	DisableGlobalIRQ();		//关闭总中断
 	board_init();			//初始化内部寄存器，勿删除此句代码。
 
+	encoder_init();
+    inductance_init();	
+	wireless_ch573_init();
+	key_init();
+	oled_init();
+	delay_init();
+	menu_init();
 	//此处编写用户代码(例如：外设初始化代码等)
-
-    
 	EnableGlobalIRQ();		//开启总中断
+
     while(1)
 	{
-
-		 //此处编写需要循环执行的代码
+		MenuCmd(key_scan());
+		// delay_ms(1000);
+		// MenuRender(1);
 		
     }
 }

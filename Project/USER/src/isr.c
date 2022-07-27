@@ -17,6 +17,7 @@
  * @date       		2020-4-14
  ********************************************************************************************************************/
 #include "headfile.h"
+#include "device.h"
 
 //UART1中断
 void UART1_Isr() interrupt 4
@@ -122,6 +123,7 @@ void INT3_Isr() interrupt 11
 
 void INT4_Isr() interrupt 16
 {
+
 	INT4_CLEAR_FLAG;  //清除中断标志
 }
 
@@ -144,11 +146,15 @@ void TM3_Isr() interrupt 19
 	
 }
 
+extern uint8 ControlFlag; 
+
 void TM4_Isr() interrupt 20
 {
 	TIM4_CLEAR_FLAG; //清除中断标志
-	ccd_collect();	 //CCD采集数据
-
+	// ccd_collect();	 //CCD采集数据
+    encoder_read();
+    inductance_read();
+    ControlFlag = 1;
 }
 
 //void  INT0_Isr()  interrupt 0;
