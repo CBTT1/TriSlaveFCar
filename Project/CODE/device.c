@@ -4,6 +4,8 @@
 
 // int16 SpeedLeft = 0,SpeedRight = 0;
 int16 AD1 = 0,AD2 = 0,AD3 = 0,AD4 = 0,AD5 = 0,AD6 = 0,AD7 = 0,AD8 = 0;
+int16 Middle = 788;
+int16 PathIntegral = 0;//路径总积分
 
 /****电感读数******/
 void inductance_read()
@@ -22,6 +24,8 @@ void inductance_read()
 void encoder_read()
 {
     static int16 Num=0;
+	static int16 SpeedLast = 0;
+	int16 SpeedCurrent = 0;
 	Num++;
 	if(Num>=4)
 	{
@@ -31,6 +35,10 @@ void encoder_read()
         RightMotorSpeed.Current = -(ENCODER_RIGHT_CNT == 1?ctimer_count_read(ENCODER_RIGHT_DIR):-ctimer_count_read(ENCODER_RIGHT_DIR));
         ctimer_count_clean(ENCODER_LEFT_DIR);
         ctimer_count_clean(ENCODER_RIGHT_DIR);
+
+		SpeedCurrent = (LeftMotorSpeed.Current + RightMotorSpeed.Current)/2;
+		PathIntegral += (SpeedCurrent + SpeedLast)*0.01;
+		SpeedLast = SpeedCurrent;
 		// con_flag = 1;
     }
 }
@@ -40,6 +48,7 @@ void encoder_init()
 {
     ctimer_count_init(ENCODER_LEFT_DIR);
 	ctimer_count_init(ENCODER_RIGHT_DIR);
+	PathIntegral = 0;//清空路径积分
 }
 
 /***电机初始化***/
@@ -51,6 +60,11 @@ void motor_init()
 	pwm_init(RIGHT_BACK,12000,0);
 }
 
+/***舵机初始化***/
+void steer_init()
+{
+	pwm_init(STEER,50,Middle);
+}
 /***电感初始化****/
 void inductance_init()
 {

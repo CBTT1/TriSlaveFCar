@@ -40,11 +40,15 @@ struct SpeedGoal
 };
 
 extern uint8 ControlFlag;
+extern int16 RateKd;
 extern struct PidParam SpeedParam;
+extern struct PidParam SteerPid,SteerStraight,SteerTurn;
 extern struct PidParam CoeParam;
 extern struct CarParam LeftMotorSpeed,RightMotorSpeed,Steer;
 extern struct SpeedGoal SlowSpeed,BalanceSpeed,FastSpeed;
+extern float ParamCoeBalance;
 
-extern void main_control();
+void main_control();
+int16 error_culculate();
 
 #endif

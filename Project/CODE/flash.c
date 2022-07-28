@@ -1,5 +1,8 @@
 #include "headfile.h"
-#include "SEEKFREE_OLED.h"
+#include "control.h"
+#include "device.h"
+#include "element_process.h"
+
 sfr IAP_DATA_A = 0xC2; 
 sfr IAP_ADDRH_A = 0xC3; 
 sfr IAP_ADDRL_A = 0xC4; 
@@ -116,8 +119,39 @@ void read_int16(int16* x)
 void write_flash()
 {
 	write_po = 0;
+	oled_fill(0x00);
 	IapErase(0x0000);
 	IapErase(0x0202);
 	
-	oled_p8x16str(0,0,"read ok");
+	write_float(SteerPid.Kp);
+	write_float(SteerPid.Kd);
+	write_float(ParamCoeBalance);
+	write_float(SpeedParam.Kp);
+	write_float(SpeedParam.Ki);
+	write_int16(SlowSpeed.TurnSpeed);
+	write_int16(RateKd);
+	write_int16(RdSetIntegral[0].In);
+	write_int16(RdSetIntegral[0].Out1);
+	write_int16(RdSetIntegral[0].Out2);
+
+	oled_p8x16str(32,3,"write ok");
+}
+
+void read_flash()
+{
+	read_po = 0;
+	oled_fill(0x00);
+
+	read_float(&SteerPid.Kp);
+	read_float(&SteerPid.Kd);
+	read_float(&ParamCoeBalance);
+	read_float(&SpeedParam.Kp);
+	read_float(&SpeedParam.Ki);
+	read_int16(&SlowSpeed.TurnSpeed);
+	read_int16(&RateKd);
+	read_int16(&RdSetIntegral[0].In);
+	read_int16(&RdSetIntegral[0].Out1);
+	read_int16(&RdSetIntegral[0].Out2);
+
+	oled_p8x16str(32,3,"read ok");
 }
