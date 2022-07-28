@@ -35,61 +35,47 @@
     "files": [],
     "folders": [
       {
-        "name": "code",
+        "name": "startup",
         "files": [
           {
-            "path": "../CODE/calculate.c"
+            "path": "../../Libraries/libraries/common.c"
           },
           {
-            "path": "../CODE/calculate.h"
+            "path": "../../Libraries/libraries/common.h"
           },
           {
-            "path": "../CODE/control.c"
+            "path": "../../Libraries/libraries/board.c"
           },
           {
-            "path": "../CODE/control.h"
+            "path": "../../Libraries/libraries/board.h"
           },
           {
-            "path": "../CODE/device.c"
-          },
-          {
-            "path": "../CODE/device.h"
-          },
-          {
-            "path": "../CODE/flash.c"
-          },
-          {
-            "path": "../CODE/flash.h"
-          },
-          {
-            "path": "../CODE/menu.c"
-          },
-          {
-            "path": "../CODE/menu.h"
-          },
-          {
-            "path": "../CODE/my_menu.c"
-          },
-          {
-            "path": "../CODE/my_menu.h"
-          },
-          {
-            "path": "../CODE/testmode.c"
-          },
-          {
-            "path": "../CODE/testmode.h"
+            "path": "../../Libraries/libraries/STC8Hxx.h"
           }
         ],
         "folders": []
       },
       {
-        "name": "doc",
-        "files": [],
-        "folders": []
-      },
-      {
         "name": "seekfree_libraries",
         "files": [
+          {
+            "path": "../../Libraries/seekfree_libraries/zf_spi.c"
+          },
+          {
+            "path": "../../Libraries/seekfree_libraries/zf_spi.h"
+          },
+          {
+            "path": "../../Libraries/seekfree_libraries/zf_iic.c"
+          },
+          {
+            "path": "../../Libraries/seekfree_libraries/zf_iic.h"
+          },
+          {
+            "path": "../../Libraries/seekfree_libraries/zf_uart.c"
+          },
+          {
+            "path": "../../Libraries/seekfree_libraries/zf_uart.h"
+          },
           {
             "path": "../../Libraries/seekfree_libraries/zf_adc.c"
           },
@@ -97,16 +83,16 @@
             "path": "../../Libraries/seekfree_libraries/zf_adc.h"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_delay.c"
+            "path": "../../Libraries/seekfree_libraries/zf_tim.c"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_delay.h"
+            "path": "../../Libraries/seekfree_libraries/zf_tim.h"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_eeprom.c"
+            "path": "../../Libraries/seekfree_libraries/zf_pwm.c"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_eeprom.h"
+            "path": "../../Libraries/seekfree_libraries/zf_pwm.h"
           },
           {
             "path": "../../Libraries/seekfree_libraries/zf_exti.c"
@@ -121,16 +107,16 @@
             "path": "../../Libraries/seekfree_libraries/zf_gpio.h"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_iic.c"
+            "path": "../../Libraries/seekfree_libraries/zf_eeprom.c"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_iic.h"
+            "path": "../../Libraries/seekfree_libraries/zf_eeprom.h"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_mdu16.c"
+            "path": "../../Libraries/seekfree_libraries/zf_delay.c"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_mdu16.h"
+            "path": "../../Libraries/seekfree_libraries/zf_delay.h"
           },
           {
             "path": "../../Libraries/seekfree_libraries/zf_nvic.c"
@@ -139,28 +125,10 @@
             "path": "../../Libraries/seekfree_libraries/zf_nvic.h"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_pwm.c"
+            "path": "../../Libraries/seekfree_libraries/zf_mdu16.c"
           },
           {
-            "path": "../../Libraries/seekfree_libraries/zf_pwm.h"
-          },
-          {
-            "path": "../../Libraries/seekfree_libraries/zf_spi.c"
-          },
-          {
-            "path": "../../Libraries/seekfree_libraries/zf_spi.h"
-          },
-          {
-            "path": "../../Libraries/seekfree_libraries/zf_tim.c"
-          },
-          {
-            "path": "../../Libraries/seekfree_libraries/zf_tim.h"
-          },
-          {
-            "path": "../../Libraries/seekfree_libraries/zf_uart.c"
-          },
-          {
-            "path": "../../Libraries/seekfree_libraries/zf_uart.h"
+            "path": "../../Libraries/seekfree_libraries/zf_mdu16.h"
           }
         ],
         "folders": []
@@ -169,12 +137,6 @@
         "name": "seekfree_peripheral",
         "files": [
           {
-            "path": "../../Libraries/libraries/SEEKFREE_PRINTF.c"
-          },
-          {
-            "path": "../../Libraries/libraries/SEEKFREE_PRINTF.h"
-          },
-          {
             "path": "../../Libraries/seekfree_peripheral/headfile.h"
           },
           {
@@ -182,18 +144,6 @@
           },
           {
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_18TFT.h"
-          },
-          {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_ABSOLUTE_ENCODER.c"
-          },
-          {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_ABSOLUTE_ENCODER.h"
-          },
-          {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_BLUETOOTH_CH9141.c"
-          },
-          {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_BLUETOOTH_CH9141.h"
           },
           {
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_FONT.c"
@@ -214,6 +164,12 @@
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_IIC.h"
           },
           {
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_TSL1401.c"
+          },
+          {
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_TSL1401.h"
+          },
+          {
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_IPS114_SPI.c"
           },
           {
@@ -232,10 +188,16 @@
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_OLED.h"
           },
           {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_TSL1401.c"
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_ABSOLUTE_ENCODER.c"
           },
           {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_TSL1401.h"
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_ABSOLUTE_ENCODER.h"
+          },
+          {
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_WIRELESS.c"
+          },
+          {
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_WIRELESS.h"
           },
           {
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_VIRSCO.c"
@@ -244,39 +206,29 @@
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_VIRSCO.h"
           },
           {
+            "path": "../../Libraries/libraries/SEEKFREE_PRINTF.c"
+          },
+          {
+            "path": "../../Libraries/libraries/SEEKFREE_PRINTF.h"
+          },
+          {
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_WIRELESS_CH573.c"
           },
           {
             "path": "../../Libraries/seekfree_peripheral/SEEKFREE_WIRELESS_CH573.h"
           },
           {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_WIRELESS.c"
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_BLUETOOTH_CH9141.c"
           },
           {
-            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_WIRELESS.h"
+            "path": "../../Libraries/seekfree_peripheral/SEEKFREE_BLUETOOTH_CH9141.h"
           }
         ],
         "folders": []
       },
       {
-        "name": "startup",
-        "files": [
-          {
-            "path": "../../Libraries/libraries/board.c"
-          },
-          {
-            "path": "../../Libraries/libraries/board.h"
-          },
-          {
-            "path": "../../Libraries/libraries/common.c"
-          },
-          {
-            "path": "../../Libraries/libraries/common.h"
-          },
-          {
-            "path": "../../Libraries/libraries/STC8Hxx.h"
-          }
-        ],
+        "name": "doc",
+        "files": [],
         "folders": []
       },
       {
